@@ -408,3 +408,153 @@ Count and print how many vowels (a,e,i,o,u) it has.
 Use for loop + if.
 '''
 
+# word = input("Enter a Word: ").lower()
+# vowels = "aieou"
+# count = 0
+
+# for char in word:
+#     if char in vowels:
+#         count += 1
+# print("Vowels:", count)
+
+
+
+'''
+# Exercise 9: Print Star Triangle
+Print:
+*
+**
+***
+****
+*****
+Use nested loop or string multiplication.
+
+'''
+
+# for i in range(1,6):
+#     print('*'*i)
+
+
+'''
+Exercise 10: Number Guessing Game (Mini Project):
+- Computer picks a secret number (e.g., 42)
+- User keeps guessing
+- Print "Too high", "Too low", or "Correct!"
+- Stop when correct
+- Use while + input + break
+'''
+
+# secret_number = 42
+
+# while True:
+#     number = int(input("Enter a number:"))
+#     if number == secret_number:
+#         print("Correct!", number)
+#         break
+#     elif number >= secret_number:
+#         print("Number is too high!")
+#     else:
+#         print("Number is too low!")
+
+'''
+# Build your own loop idea (e.g., FizzBuzz):
+Print 1 to 30:
+- If divisible by 3 → "Fizz"
+- If divisible by 5 → "Buzz"
+- If both → "FizzBuzz"
+- Else → number
+'''
+
+# for i in range(1,31):
+#     if i%3==0:
+#         print("Fizz",i)
+#     elif i%5==0:
+#         print("Buzz",i)
+#     elif i%3==0 and i%5==0:
+#         print("FizzBuzz!!",i)
+#     else:
+#         print(i)
+
+'''
+# Find factorial of a number (e.g., 5! = 120)
+hint : n*(n-1)
+'''
+
+
+'''
+num = int(input("Enter a number:"))
+
+# for i in range(1,num+1):
+#     print(i*(i+1))
+
+factorial = 1
+i = 1
+while i <= num:
+    factorial *= i
+    i += 1
+print("Factorail: ", factorial)
+
+'''
+
+# Check if a number is prime using a loop.
+
+
+'''
+
+while True:
+    num = int(input("Enter a number:"))
+    if num%1==0 and num%num==0:
+        print("Prime Number:", num)
+        break
+    else:
+        print("Not a prime number")
+
+        '''
+
+
+# 🎯  Mini Project: Number Guessing Game
+'''
+Welcome to the Number Guessing Game!
+I'm thinking of a number between 1 and 20.
+You have 5 attempts.
+
+Enter your guess: 10
+Too high! Try again.
+Enter your guess: 7
+Too low! Try again.
+Enter your guess: 8
+🎉 Correct! You guessed it in 3 attempts.
+
+'''
+
+import random
+
+secret_number = random.randint(1,10)
+
+print("Wlecome to the Number Geassing Game!")
+print("I'm thinking of a number between 1 and 5")
+print("you have 5 attempts.")
+print('*'*80)
+
+attempt = 5
+
+while attempt>0:
+    try:
+        geass_number = int(input("Enter a number:"))
+        if geass_number>secret_number:
+            print("Too high! Try again.")
+            print(f"Remaining attempt {attempt}")
+        elif geass_number<secret_number:
+            print("Too low! Try again.")
+            print(f"Remaining attempt {attempt}")
+        else:
+            print("Correct!!, You geasing the right number.")
+            print(f"Remaining attempt {attempt}")
+            break
+        attempt -= 1
+    except ValueError:
+        print(f"Invalid number entered{geass_number}. Please Enter the correct number in integer format.")
+
+
+if attempt==0:
+    print(f" Out of attempts! The correct number was {secret_number}.")
